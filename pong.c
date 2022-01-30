@@ -43,6 +43,8 @@ void play(int x_min, int y_min, int x_max, int y_max, int x_p1, int y_p1, int x_
         key = Count_the_key ();
         if (key == 'a') {
             if (y_p1 + 1 == y_max - 1) {
+                printf("\033[2J");
+                printf("The upper limit for racket No. 1 has been reached\n");
                 continue;
             } else {
                 y_p1 += 1;
@@ -50,6 +52,8 @@ void play(int x_min, int y_min, int x_max, int y_max, int x_p1, int y_p1, int x_
         }
         if (key == 'z') {
             if (y_p1 - 3 == y_min) {
+                printf("\033[2J");
+                printf("The lower limit for racket No. 1 has been reached\n");
                 continue;
             } else {
                 y_p1 -= 1;
@@ -57,6 +61,8 @@ void play(int x_min, int y_min, int x_max, int y_max, int x_p1, int y_p1, int x_
         }
         if (key == 'm') {
             if (y_p2 - 3 == y_min) {
+                printf("\033[2J");
+                printf("The lower limit for racket No. 2 has been reached\n");
                 continue;
             } else {
                 y_p2 -= 1;
@@ -64,6 +70,8 @@ void play(int x_min, int y_min, int x_max, int y_max, int x_p1, int y_p1, int x_
         }
         if (key == 'k') {
             if (y_p2 + 1 == y_max - 1) {
+                printf("\033[2J");
+                printf("The upper limit for racket No. 2 has been reached\n");
                 continue;
             } else {
                 y_p2 += 1;
@@ -125,10 +133,11 @@ void play(int x_min, int y_min, int x_max, int y_max, int x_p1, int y_p1, int x_
             x_p2 = 78;
             y_p2 = 13;
         }
-        if (count_p1 == 1) {
+        printf("\033[2J");
+        if (count_p1 == 21) {
             printf("First player winner!!! Score: %d:%d\n", count_p1, count_p2);
         }
-        if (count_p1 == 2) {
+        if (count_p1 == 21) {
             printf("Second player winner!!! Score: %d:%d\n", count_p1, count_p2);
         }
     }
