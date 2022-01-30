@@ -14,7 +14,6 @@ int main() {
 
 void play(int x_min, int y_min, int x_max, int y_max, int x_p1, int y_p1, int x_p2, int y_p2, int x_ball, int y_ball, int count_p1, int count_p2) {
     char key;
-    int k = 0;
     bool vert = false, goriz = true;
     while (count_p1 != 21 && count_p2 != 21) {
         for (int i = y_max; i > y_min; i--) {
@@ -150,15 +149,21 @@ int Count_the_key () {
     {
     case 97:
         return 'a';
+        break;
     case 122:
         return 'z';
+        break;
     case 109:
         return 'm';
+        break;
     case 107:
         return 'k';
+        break;
     case 32:
         return ' ';
+        break;
     default:
-        Count_the_key ();
+        return Count_the_key ();
+        break;
     }
 }
